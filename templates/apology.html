@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <div class="jumbotron">
+        {% if other %}
+            <h3 class="display-4">No more students:</h3>
+        {% else %}
+            <h3 class="display-4">Something went wrong:</h3>
+        {% endif %}
+        <p class="lead">{{ message }}</p>
+        <hr class="my-4">
+        <form method="get" action="{{ route }}">
+            <button class="btn btn-danger" type="submit">Try Again</button>
+        </form>
+    </div>
+
+{% endblock %}

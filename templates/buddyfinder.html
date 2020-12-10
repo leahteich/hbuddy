@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block main %}
+
+    <div class="card text-center">
+        <div class="card-header">
+            Potential H-Buddy for {{ cardinfo.class }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"> <h3>{{ cardinfo.first_name }} {{ cardinfo.last_name }}</h3></h5>
+            {% if cardinfo.year %}<h5><span class="badge badge-pill badge-primary">Class of {{ cardinfo.year }}</span></h5>{% endif %}
+            {% if cardinfo.bio %}<p class="card-text">"{{ cardinfo.bio }}"</p>{% endif %}
+            {% if cardinfo.location %}<p class="card-text">Based in <span class="badge badge-secondary">{{ cardinfo.location }}</span></p>{% endif %}
+            {% if cardinfo.timezone %}<p class="card-text">Timezone: <span class="badge badge-success">{{ cardinfo.timezone }}</span> </p>{% endif %}
+            {% if cardinfo.concentration %}<p class="card-text"><span class="badge badge-warning">{{ cardinfo.concentration }}</span> Concentrator</p>{% endif %}
+            {% if cardinfo.length %}<p class="card-text">Length of collaboration: <span class="badge badge-info">{{ cardinfo.length }}</span> </p>{% endif %}
+            {% if cardinfo.preference %}<p class="card-text">Time preference: <span class="badge badge-danger">{{ cardinfo.preference }}</span> </p>{% endif %}
+
+            <table class="buttons">
+                <tr>
+                    <td>
+                        <form action="/check" method="put">
+                            <button class="btn btn-lg btn-success" type="submit">&emsp;&emsp;✓&emsp;&emsp;</button>
+                        </form>
+                    </td>
+                    <td>&emsp;&emsp;</td>
+                    <td>
+                        <form action="/ex" method="put">
+                            <button class="btn btn-lg btn-danger" type="submit">&emsp;&emsp;✗&emsp;&emsp;</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-footer text-muted">
+            {{ cardinfo.first_name }} {{ cardinfo.last_name }} was last online on {{ cardinfo.lastactive }}
+        </div>
+    </div>
+
+{% endblock %}

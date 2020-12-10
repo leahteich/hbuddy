@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    <form action="/profile" method="post">
+        Basic Information:
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="email" value="{{ info.email }}" type="text">
+            <input autocomplete="off" class="form-control" name="phone" {% if info.phone %} value = "{{ info.phone }}" {% endif %} placeholder="Phone" type="text">
+            <input autocomplete="off" class="form-control" name="location" {% if info.location %} value = "{{ info.location }}" {% endif %} placeholder="City" type="text">
+        </div>
+        Pset Class:
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="class" {% if info.class %} value = "{{ info.class }}" {% endif %} placeholder="Course ID" type="text">
+        </div>
+        Profile Information and Preferences:
+        <div class="form-group">
+            <textarea class="form-control" name="bio" rows="3" placeholder="Bio" type="text">{% if info.bio %}{{ info.bio }}{% endif %}</textarea>
+            <br>
+            <input autocomplete="off" class="form-control" name="year" {% if info.year %} value = "{{ info.year }}" {% endif %} placeholder="Graduation Year" type="number">
+            <input autocomplete="off" class="form-control" name="concentration" {% if info.concentration %} value = "{{ info.concentration }}" {% endif %} placeholder="Concentration" type="text">
+            <br>
+            <br>
+            <label for="length">Length of collaboration:</label>
+            <select id="length" name="length">
+                <option value="Once">One time</option>
+                <option value="Long Term">Long term</option>
+            </select>
+            <label for="preference">Time preference:</label>
+            <select id="preference" name="preference">
+                <option value="Early Bird">Early Bird</option>
+                <option value="None">None</option>
+                <option value="Night Owl">Night Owl</option>
+            </select>
+            <br>
+            <label for="times">Timezone:</label>
+            <select id="timezone" name="timezone">
+            {% for i in timezones %}
+                {% if info.timezone == i %}
+                <option value="{{ i }}" selected>{{ i }}</option>
+                {% else %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endif %}
+            {% endfor %}
+            </select>
+
+        </div>
+        <button class="btn btn-primary" type="submit">Update Profile</button>
+    </form>
+{% endblock %}

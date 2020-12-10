@@ -1,0 +1,76 @@
+.navbar-custom {
+    /*Navigation bar customized color*/
+    background-color: crimson;
+}
+
+.navbar {
+    /*Overriding Bootstrap navigation bar settings*/
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.8);
+    padding: 1%;
+}
+
+.nav-link {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home {
+    font-weight: bold;
+    font-size: 150px;
+}
+
+a:hover {
+    color: #fa86c4;
+}
+
+.image {
+    height: auto;
+    max-width: 40%;
+    position: absolute;
+    left: 0px;
+    top: 180px;
+}
+
+.rightalign {
+    margin-left: 400px;
+    margin-right: 0px;
+    position: relative;
+}
+
+.spacing {
+    margin-left: 2%;
+    margin-right: 15%;
+}
+
+.buttons {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .form-control {
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main {
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    color: black;
+}
+
+main img {
+    /* Constrain images on small screens */
+    max-width: 100%;
+}
+
+p {
+    font-size: 16px;
+}

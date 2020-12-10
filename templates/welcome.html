@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block main %}
+
+
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to H-Buddy!</h1>
+        <p class="lead">H-Buddy is a web application designed to streamline the process of finding compatible
+            problem set partners. You make a profile with information about which times would work for you,
+            what you look for in a study partner, and anything else you want to include.</p>
+        <hr class="my-4">
+
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="3000">
+                    <img src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="d-block w-100" alt="Error: Could not display AudreyVanderslice.png">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="home">Connect.</h1>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="3000">
+                    <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iR1m.FZG3QsY/v0/1000x-1.jpg" class="d-block w-100" alt="Error: Could not display Picture1.png">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="home">Create.</h1>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="3000">
+                    <img src="https://www.gettingsmart.com/wp-content/uploads/2018/10/Collab.jpg" class="d-block w-100" alt="Error: Could not display Picture4.png">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="home" style="color: crimson;">Ace.</h1>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <p> <br>
+            The best part is that Buddies is an entirely customizable experience. You get to weigh which
+            preferences matter to YOU. You can click through profiles of others in your class to find Buddies.
+            If you click the green check next to their name and they do the same for you, you'll be sent each
+            other's contact information and the psetting can begin.
+        </p>
+        <p>
+            If only one or neither of you clicks check, no sweat! You
+            can keep looking for partners.
+        </p>
+        <h5>
+            <a href="/register"><strong>Register</strong></a> to make an account and start finding Buddies!
+        </h5>
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block main %}
+
+    <h1>Dashboard: <div style="font-size: 70px; font-weight: 1000; color: crimson;">{{ meinfo.first_name }} {{ meinfo.last_name }}</div></h1>
+    <hr class="my-4">
+
+    <table class="buttons">
+        <tr>
+            <td>
+                <form method="get" action="/profile">
+                    <button class="btn btn-danger" type="submit">Update my Profile</button>
+                </form>
+            </td>
+            <td>&emsp;&emsp;</td>
+            <td>
+                {% if meinfo.class %}
+                <form method="get" action="/buddyfinder">
+                    <button class="btn btn-danger" type="submit">Find Buddies taking <strong>{{ meinfo.class }}</strong> </button>
+                </form>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    {% if not meinfo.class %}
+    <p>Set your class in your profile to start finding Buddies!</p>
+    {% endif %}
+
+    <br>
+
+    {% if cardinfo %}
+    <h3> My Buddies:</h3>
+    {% else %}
+    You currently have no buddies. Let's find some!
+    {% endif %}
+    <div class="row">
+    {% for i in cardinfo %}
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header"> <h5>{{ i.first_name }} {{ i.last_name }} {% if i.year %}'{{ i.year % 100 }}{% endif %}
+                    in {{ i.class[0].class }}</h5></div>
+                <div class="card-body">
+                    <p class="card-text">{{ i.bio }}</p>
+                    <h5><span class="badge badge-info">{{ i.email }}</span>
+                    {% if i.phone %} <span class="badge badge-info">{{ i.phone }}</span> {% endif %}</h5>
+                </div>
+                <div class="card-footer text-muted">
+                    Match made at {{ i.time[0].matchtime }}
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

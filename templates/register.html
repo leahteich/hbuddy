@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form class="needs-validation" novalidate action="/register" method="post">
+        <h5>Register for H-Buddy:</h5>
+        <div class="form-group">
+            <input class="form-control" name="first" placeholder="First" type="text" required>
+            <input class="form-control" name="last" placeholder="Last" type="text" required>
+            <br>
+            <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email (used for login)" type="text" required>
+            <input autocomplete="off" autofocus class="form-control" name="phone" placeholder="Phone #" type="text" required>
+            <br>
+            <input class="form-control" name="password" placeholder="Password" type="password" required>
+            <input class="form-control" name="confirmation" placeholder="Password (Confirm)" type="password" required>
+            <br>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Create Profile</button>
+    </form>
+{% endblock %}
